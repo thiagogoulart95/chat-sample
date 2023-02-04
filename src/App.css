@@ -1,0 +1,47 @@
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s ease-in-out;
+  transform: translateY(100%);
+}
+
+.chat-container.visible {
+  transform: translateY(0);
+}
+
+.options,
+.answer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  max-width: 200px;
+  overflow: auto;
+}
+
+.option {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: lightgray;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.back-button {
+  padding: 10px 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+}
