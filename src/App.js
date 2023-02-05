@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
-import './App.css'
+import "./App.css";
 
 const options = [
   {
@@ -19,17 +19,18 @@ const options = [
   }
 ];
 
-function Chat() {
+function Chat () {
   const [selectedOption, setSelectedOption] = useState(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setIsVisible(true);
-  }, []);
+  const [isMinimized, setIsMinimized] = useState(false);
 
   return (
-    <div className={`chat-container ${isVisible ? "visible" : ""}`}>
-      <div className="title">Precisa de ajuda?</div>
+    <div className={`chat-container ${isMinimized ? "minimized" : ""}`}>
+      <div className="title">
+        <span>{isMinimized ? "?" : "Precisa de ajuda?"}</span>
+        <button className="minimize-button" onClick={() => setIsMinimized(!isMinimized)}>
+          {isMinimized ? "?" : "-"}
+        </button>
+      </div>
       {selectedOption ? (
         <>
           <div className="answer">{selectedOption.answer}</div>
